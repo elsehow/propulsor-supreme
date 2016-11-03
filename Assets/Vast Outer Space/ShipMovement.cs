@@ -10,6 +10,7 @@ public class ShipMovement : MonoBehaviour {
 	void Start ()
 	{
 		rb = GetComponent<Rigidbody>();
+		speed = 1000.0f;
 	}
 
 	void FixedUpdate ()
@@ -20,6 +21,6 @@ public class ShipMovement : MonoBehaviour {
 
 		Vector3 movement = new Vector3 (forceEastWest, forceUpDown, forceNorthSouth);
 
-		rb.AddForce(movement);
+		rb.AddForce(movement * speed);
 	}
 }
